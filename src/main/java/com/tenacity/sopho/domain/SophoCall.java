@@ -297,7 +297,6 @@ public final class SophoCall {
     /**
      * Returns the SophoCall as a FDCR standard string format
      *
-     *
      * @return FDCR Standard String format
      */
     public String getFDCRStandardString() {
@@ -337,9 +336,9 @@ public final class SophoCall {
         }
 
         if (this.getPartyBtype() == SophoPartyType.EXTENSION) {
-            if(this.getDestination()==null) {
+            if (this.getDestination() == null) {
                 formatter.format("%-32s", this.getPartyBFarEnd());
-            }else{
+            } else {
                 formatter.format("%-12s", this.getPartyBFarEnd());
                 formatter.format("%-20s", this.getDestination());
             }
@@ -353,29 +352,28 @@ public final class SophoCall {
             }
         }
 
-        formatter.format(TWO_SPACES_FORMAT,this.getPartyAtype().ordinal());
-        formatter.format(TWO_SPACES_FORMAT,this.getPartyBtype().ordinal());
+        formatter.format(TWO_SPACES_FORMAT, this.getPartyAtype().ordinal());
+        formatter.format(TWO_SPACES_FORMAT, this.getPartyBtype().ordinal());
 
-        formatter.format(TWO_DIGITS_FILED_WITH_ZERO,this.getIbsc());
+        formatter.format(TWO_DIGITS_FILED_WITH_ZERO, this.getIbsc());
 
         formatter.format(FDCR_DEFAULT_FACILITY_INDICATOR);
 
-        formatter.format(TWO_SPACES_FORMAT,(this.answeredStatus)?1:0);
+        formatter.format(TWO_SPACES_FORMAT, (this.answeredStatus) ? 1 : 0);
 
-        formatter.format("%-4s",String.format("%03d", this.getAnswerDelay()));
+        formatter.format("%-4s", String.format("%03d", this.getAnswerDelay()));
 
-        formatter.format(TWO_SPACES_FORMAT,this.getAnswerDelayType().ordinal());
+        formatter.format(TWO_SPACES_FORMAT, this.getAnswerDelayType().ordinal());
 
-        formatter.format(TWO_SPACES_FORMAT,this.getRealeaseReason().ordinal());
+        formatter.format(TWO_SPACES_FORMAT, this.getRealeaseReason().ordinal());
 
-        formatter.format("%06d",this.getConversationDuration());
+        formatter.format("%06d", this.getConversationDuration());
 
         return formatter.toString();
     }
 
     /**
      * Returns the SophoCall as a FDCR standard string format with less spaces
-     *
      *
      * @return FDCR Standard String format
      */
@@ -418,9 +416,9 @@ public final class SophoCall {
 
 
         if (this.getPartyBtype() == SophoPartyType.EXTENSION) {
-            if(this.getDestination()==null) {
+            if (this.getDestination() == null) {
                 formatter.format("%-32s", this.getPartyBFarEnd());
-            }else{
+            } else {
                 formatter.format("%-12s", this.getPartyBFarEnd());
                 formatter.format("%-20s", this.getDestination());
             }
@@ -434,22 +432,22 @@ public final class SophoCall {
             }
         }
 
-        formatter.format("%1d",this.getPartyAtype().ordinal());
-        formatter.format("%1d",this.getPartyBtype().ordinal());
+        formatter.format("%1d", this.getPartyAtype().ordinal());
+        formatter.format("%1d", this.getPartyBtype().ordinal());
 
-        formatter.format(TWO_DIGITS_FILED_WITH_ZERO,this.getIbsc());
+        formatter.format(TWO_DIGITS_FILED_WITH_ZERO, this.getIbsc());
 
         formatter.format(FDCR_DEFAULT_FACILITY_INDICATOR);
 
-        formatter.format("%1d",(this.answeredStatus)?1:0);
+        formatter.format("%1d", (this.answeredStatus) ? 1 : 0);
 
-        formatter.format("%-3s",String.format("%03d", this.getAnswerDelay()));
+        formatter.format("%-3s", String.format("%03d", this.getAnswerDelay()));
 
-        formatter.format("%1d",this.getAnswerDelayType().ordinal());
+        formatter.format("%1d", this.getAnswerDelayType().ordinal());
 
-        formatter.format("%1d",this.getRealeaseReason().ordinal());
+        formatter.format("%1d", this.getRealeaseReason().ordinal());
 
-        formatter.format("%06d",this.getConversationDuration());
+        formatter.format("%06d", this.getConversationDuration());
 
         return formatter.toString();
     }
@@ -462,7 +460,7 @@ public final class SophoCall {
      */
     public String getFDCRAccountingString() {
 
-        if(costCentre==null) return null;
+        if (costCentre == null) return null;
 
         StringBuilder sb = new StringBuilder();
         Formatter formatter = new Formatter(sb);
@@ -472,24 +470,24 @@ public final class SophoCall {
         if (referenceNumber == null) {
             formatter.format(DEFAULT_FDCR_ACCOUNTING_REFERENCE_NUMBER);
         } else {
-            formatter.format("%04d",Integer.parseInt(referenceNumber)+1);
+            formatter.format("%04d", Integer.parseInt(referenceNumber) + 1);
         }
 
         formatter.format("%1d", FDCR_ACCOUNTING_TYPE);
 
         formatter.format(TWENTY_SPACES_FORMAT, this.getDestination());
 
-        formatter.format(TWO_SPACES_FORMAT,this.getPasswordIndication().ordinal());
+        formatter.format(TWO_SPACES_FORMAT, this.getPasswordIndication().ordinal());
 
-        formatter.format(TWO_SPACES_FORMAT,this.isPrivateCall()?1:0);
+        formatter.format(TWO_SPACES_FORMAT, this.isPrivateCall() ? 1 : 0);
 
-        formatter.format(TWO_SPACES_FORMAT,this.isNonPreferedRoute()?1:0);
+        formatter.format(TWO_SPACES_FORMAT, this.isNonPreferedRoute() ? 1 : 0);
 
-        formatter.format(TWO_SPACES_FORMAT,this.getCostCentreType().ordinal());
+        formatter.format(TWO_SPACES_FORMAT, this.getCostCentreType().ordinal());
 
-        formatter.format("%-12s",this.getCostCentre());
+        formatter.format("%-12s", this.getCostCentre());
 
-        formatter.format("%-4s",(this.getAnalysisGroup()==null)?"":this.getAnalysisGroup());
+        formatter.format("%-4s", (this.getAnalysisGroup() == null) ? "" : this.getAnalysisGroup());
 
         formatter.format("%06d", this.getMeteringPulses());
 
@@ -505,7 +503,7 @@ public final class SophoCall {
      */
     public String getFDCRAccountingStringWithLessSpaces() {
 
-        if(costCentre==null) return null;
+        if (costCentre == null) return null;
 
         StringBuilder sb = new StringBuilder();
         Formatter formatter = new Formatter(sb);
@@ -515,25 +513,26 @@ public final class SophoCall {
         if (referenceNumber == null) {
             formatter.format(DEFAULT_FDCR_ACCOUNTING_REFERENCE_NUMBER);
         } else {
-            formatter.format("%04d",Integer.parseInt(referenceNumber)+1);
+            formatter.format("%04d", Integer.parseInt(referenceNumber) + 1);
         }
 
         formatter.format("%1d", FDCR_ACCOUNTING_TYPE);
 
         formatter.format(TWENTY_SPACES_FORMAT, this.getDestination());
 
-        formatter.format("%1d",this.getPasswordIndication().ordinal());
+        formatter.format("%1d", this.getPasswordIndication().ordinal());
 
-        formatter.format("%1d",this.isPrivateCall()?1:0);
+        formatter.format("%1d", this.isPrivateCall() ? 1 : 0);
 
-        formatter.format("%1d",this.isNonPreferedRoute()?1:0);
+        formatter.format("%1d", this.isNonPreferedRoute() ? 1 : 0);
 
-        formatter.format("%1d",this.getCostCentreType().ordinal());
+        formatter.format("%1d", this.getCostCentreType().ordinal());
 
-        formatter.format("%-12s",this.getCostCentre());
+        formatter.format("%-12s", this.getCostCentre());
 
-        formatter.format("%-3s",(this.getAnalysisGroup()==null||this.getAnalysisGroup().isEmpty()||
-                this.getAnalysisGroup().equals("   "))?"000":this.getAnalysisGroup());
+        formatter.format("%-3s", ((this.getAnalysisGroup() == null || this.getAnalysisGroup().isEmpty() ||
+                this.getAnalysisGroup().equals("   ")) && (this.partyAtype != SophoPartyType.PSTN)) ?
+                "000" : this.getAnalysisGroup());
 
         formatter.format("%06d", this.getMeteringPulses());
 
