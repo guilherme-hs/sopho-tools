@@ -55,6 +55,7 @@ public class SophoCallTest extends TestCase {
     private SophoCall sophoCallExtensionToExtension;
     private SophoCall sophoCallExternalToExternal;
 
+
     @Before
     public void setUp(){
         sophoCallExtensionToExternal = new SophoCall();
@@ -89,7 +90,7 @@ public class SophoCallTest extends TestCase {
         sophoCallExternalToExternal.setReferenceNumber("0180");
         sophoCallExternalToExternal.setPartyAtype(SophoPartyType.PSTN);
         calendar = Calendar.getInstance();
-        calendar.set(2013, Calendar.AUGUST, 01, 10, 47);
+        calendar.set(2013, Calendar.AUGUST, 1, 10, 47);
         sophoCallExternalToExternal.setDate(calendar.getTime());
         sophoCallExternalToExternal.setPartyARoute("008");
         sophoCallExternalToExternal.setPartyALine("8001");
@@ -98,7 +99,7 @@ public class SophoCallTest extends TestCase {
         sophoCallExternalToExternal.setPartyBRoute("001");
         sophoCallExternalToExternal.setPartyBLine("1016");
         sophoCallExternalToExternal.setPartyBFarEnd("");
-        sophoCallExternalToExternal.setIbsc(01);
+        sophoCallExternalToExternal.setIbsc(1);
         sophoCallExternalToExternal.setAnsweredStatus(true);
         sophoCallExternalToExternal.setAnswerDelay(2);
         sophoCallExternalToExternal.setAnswerDelayType(SophoAnswerDelayType.BOTH);
@@ -118,7 +119,7 @@ public class SophoCallTest extends TestCase {
         sophoCallExternalToExtension = new SophoCall();
         sophoCallExternalToExtension.setReferenceNumber("0118");
         calendar = Calendar.getInstance();
-        calendar.set(2015, Calendar.JANUARY, 01, 14, 51);
+        calendar.set(2015, Calendar.JANUARY, 1, 14, 51);
         sophoCallExternalToExtension.setDate(calendar.getTime());
         sophoCallExternalToExtension.setPartyARoute("000");
         sophoCallExternalToExtension.setPartyALine("0001");
