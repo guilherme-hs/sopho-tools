@@ -110,8 +110,6 @@ public class SophoCallTest extends TestCase {
         sophoCallExternalToExternal.setPrivateCall(false);
         sophoCallExternalToExternal.setNonPreferedRoute(false);
         sophoCallExternalToExternal.setCostCentreType(SophoCostCentreType.NO_COST_CENTRE);
-        sophoCallExternalToExternal.setCostCentre("    ");
-        sophoCallExternalToExternal.setAnalysisGroup("   ");
         sophoCallExternalToExternal.setMeteringPulses(0);
         sophoCallExternalToExternal.setCallDuration(54);
 

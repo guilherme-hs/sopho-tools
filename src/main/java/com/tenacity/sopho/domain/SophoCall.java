@@ -73,9 +73,9 @@ public final class SophoCall {
     //type of the call costcentre
     private SophoCostCentreType costCentreType;
     //cost centre of the call
-    private String costCentre;
+    private String costCentre="    ";
     //analysis group of the call
-    private String analysisGroup;
+    private String analysisGroup="   ";
     //number of metering pulses in the call
     private int meteringPulses;
     //total duration of the call
