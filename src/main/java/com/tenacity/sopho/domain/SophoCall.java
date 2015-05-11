@@ -80,6 +80,8 @@ public final class SophoCall {
     private int meteringPulses;
     //total duration of the call
     private int callDuration;
+    //Id to identify de call
+    private String id;
 
     @Override
     public String toString() {
@@ -292,6 +294,14 @@ public final class SophoCall {
 
     public void setCallDuration(int callDuration) {
         this.callDuration = callDuration;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**
